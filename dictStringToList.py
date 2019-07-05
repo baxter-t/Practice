@@ -17,4 +17,7 @@ def toStng(dictionary, strng):
 strngTest = "thequickbrownfox"
 dicTest = ['quick', 'brown', 'the', 'fox']
 
+# this is a comment
+
+
 print(toStng(dicTest, strngTest))

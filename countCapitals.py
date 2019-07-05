@@ -9,4 +9,6 @@ def count_capitals(fname) :
 	with open(fname, 'r') as f:
 		return sum(1 if c.isupper() else 0 for line in f for c in line)
 
+        
+
 print(count_capitals("testFile"))
