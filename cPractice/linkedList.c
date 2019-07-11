@@ -6,18 +6,20 @@
 
 // Node struct
 struct Node {
-  int value;
-  struct Node *next;
-
+	int value;
+	struct Node *next;
+	
 };
 
 struct LinkedList {
-  struct Node *root;
+	struct Node *root;
 };
 
 int main(int argc, char **argv) {
-  struct LinkedList list;
-  struct Node first = {
-    .value = 1;
-  }
+	struct LinkedList list;
+	struct Node first = {
+		.value = 1;
+	}
+
+	
 }
