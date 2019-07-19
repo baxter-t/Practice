@@ -5,6 +5,9 @@
 
 #define TSIZE 5
 
+// TODO: test Comments at the start
+//
+
 char TILE[TSIZE][TSIZE] = {
 	{'!', '!', ',', ',', ','},
 	{'!', '!', ',', ',', ','},
@@ -20,7 +23,6 @@ void outputTile(char** tile) {
 		}
 		printf("\n");
 	}
-
 	return;
 }
 
@@ -86,6 +88,8 @@ Tiles initialiseTiles(void) {
 	tiles.currentTileNo = 0;
 }
 
+
+// Test Comment
 int main(int argc, char **argv) {
 	
 	char **tile = malloc(sizeof(char *) * TSIZE);
