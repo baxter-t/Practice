@@ -4,53 +4,52 @@
 #define TSIZE 5
 
 char tile[TSIZE][TSIZE] = {
-	{'!', '!', '!', ',', ','},
-	{'!', '!', ',', ',', ','},
-	{',', ',', ',', ',', ','},
-	{',', ',', ',', ',', ','},
-	{',', ',', ',', ',', ','},
+    {'!', '!', '!', ',', ','},
+    {'!', '!', ',', ',', ','},
+    {',', ',', ',', ',', ','},
+    {',', ',', ',', ',', ','},
+    {',', ',', ',', ',', ','},
 };
 
 typedef struct GameState {
+    int boardWidth;
+    int boardHeight;
 
-	int boardWidth;
-	int boardHeight;
-
-	char **board;
+    char **board;
 } GameState;
 
 void setBoard(GameState *game) {
+    game->board = malloc(game->boardHeight * sizeof(char *));
 
-	game->board = malloc(game->boardHeight * sizeof(char *));
+    for (int x = 0; x < game->boardHeight; x++) {
+        game->board[x] = malloc(game->boardWidth * sizeof(char *));
+    }
 
-	for(int x = 0; x < game->boardHeight; x++) {
-		game->board[x] = malloc(game->boardWidth * sizeof(char *));
-	}
+    for (int x = 0; x < game->boardHeight; x++) {
+        for (int y = 0; y < game->boardWidth; y++) {
+            game->board[x][y] = '.';
+        }
+    }
 
-	for (int x = 0; x < game->boardHeight; x++) {
-		for (int y = 0; y < game->boardWidth; y++) {
-			game->board[x][y] = '.';
-		}
-	}
-
-	return;
+    return;
 }
 
 void outputBoard(GameState *game) {
-	for (int x = 0; x < game->boardHeight; x++) {
-		for (int y = 0; y < game->boardWidth; y++) {
-			printf("%c  ", game->board[x][y]);
-		}
-		printf("\n");
-	}
+    for (int x = 0; x < game->boardHeight; x++) {
+        for (int y = 0; y < game->boardWidth; y++) {
+            printf("%c  ", game->board[x][y]);
+        }
+
+        printf("\n");
+    }
 }
 
 int main(int argc, char **argv) {
-	GameState game;
-	game.boardWidth = 10;
-	game.boardHeight = 10;
+    GameState game;
+    game.boardWidth = 10;
+    game.boardHeight = 10;
 
-	setBoard(&game);
+    setBoard(&game);
 
-	outputBoard(&game);
+    outputBoard(&game);
 }
