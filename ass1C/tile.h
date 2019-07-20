@@ -3,14 +3,22 @@
 
 #include "tile.h"
 
-typedef struct Tiles {
-	int tileCount;
-	int currentTileNo;
+#define TSIZE 5
 
-	char ***tiles;
-};
+typedef struct Tiles {
+    int tileCount;
+    int currentTileNo;
+
+    char ***tileDeck;
+} Tiles;
 
 // Output the tile options
+void outputTileOptions(char **tile);
+
+// Initialise the tile manager
+Tiles initialiseTiles(void);
+
+// output the tile options
 void outputTileOptions(char **tile);
 
 #endif
