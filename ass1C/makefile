@@ -8,3 +8,6 @@ tile: tile.o
 
 util: util.o
 	gcc $(CFLAGS) -o util util.c
+
+clean:
+	rm *.o

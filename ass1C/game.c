@@ -97,7 +97,11 @@ PlayerMove promptUser(int playerNo) {
 }
 
 // Ensure the given move is valid
+// Return: 1 if valid, 0 otherwise
 int checkMove(GameState *game, PlayerMove *move) {
+ 	
+
+
 }
 
 int playGame(GameState *game) {
