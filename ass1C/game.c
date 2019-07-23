@@ -95,13 +95,31 @@ PlayerMove promptUser(int playerNo) {
 
     return move;
 }
-
-// Ensure the given move is valid
 // Return: 1 if valid, 0 otherwise
 int checkMove(GameState *game, PlayerMove *move) {
- 	
+    // The tile being checked is the currentTileNo tile
+    char **tile = game->tileManager.tileDeck[game->tileManager.currentTileNo];
+    // the row and column corresponds to the middle (2,2) in the tile 2d array
+    for (int row = 0; row < TSIZE; row++) {
+        for (int col = 0; col < TSIZE; col++) {
+            // the board's row and column is the tile's - 2
 
+            // Only check if its a part of the tile
+            if (tile[row][col] == '_') {
+                // Make sure its in the bounds of the game board
+                if (row < 0 || col < 0 || row >= game->boardHeight || col >= game->boardWidth) {
+                    return 0;
+                } else {
+                    if (game->board[row - 2][col - 2] != '.') {
+                        return 0;
+                    }
+                }
+            }
+        }
+    }
 
+    // Gets to the end every was valid
+    return 1;
 }
 
 int playGame(GameState *game) {
