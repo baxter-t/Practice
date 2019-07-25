@@ -12,6 +12,9 @@ typedef struct Tiles {
     char ***tileDeck;
 } Tiles;
 
+// Rotate a tile 90 to the right
+char **rotateTile(char **tile);
+
 // Output the tile options
 void outputTileOptions(char **tile);
 
