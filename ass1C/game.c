@@ -29,6 +29,7 @@ typedef struct PlayerMove {
     int rotation;
 } PlayerMove;
 
+// Set up the board, init all to '.'
 void setBoard(GameState *game) {
     game->board = malloc(game->boardHeight * sizeof(char *));
 
@@ -43,6 +44,7 @@ void setBoard(GameState *game) {
     }
 }
 
+// Output the board and all currently placed tiles to the user
 void outputBoard(GameState *game) {
     for (int x = 0; x < game->boardHeight; x++) {
         for (int y = 0; y < game->boardWidth; y++) {
@@ -54,6 +56,7 @@ void outputBoard(GameState *game) {
     printf("\n");
 }
 
+// Prompt the user for their move, check it is valid
 PlayerMove promptUser(int playerNo) {
     PlayerMove move = {
         .row = 0,
@@ -180,6 +183,7 @@ int checkPossible(GameState *game) {
     return 0;
 }
 
+// Respond to game over, called once the next tile can no longer be placed
 void dealWithGameOver(GameState *game) {
     // The current player has been unable to place their tile
     if (!game->currentPlayer) {
@@ -191,6 +195,7 @@ void dealWithGameOver(GameState *game) {
     return;
 }
 
+// Main game play loop
 int playGame(GameState *game) {
     while (checkPossible(game)) {
         // Output board
