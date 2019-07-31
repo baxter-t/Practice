@@ -7,6 +7,10 @@
 #define READEND 0
 #define WRITEEND 1
 
+
+// For IPC, the child's stdin and out needs to be piped to the parent
+// then exec is called, cant pass the pipe to the other process
+
 int main() {
 	
 	// Two ends of the first pipe
@@ -24,7 +28,6 @@ int main() {
 		printf("Pipe Failed\n");
 		return -1;
 	}
-
 
 
 	// Fork
