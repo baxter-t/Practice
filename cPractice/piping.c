@@ -29,7 +29,6 @@ int main() {
 		return -1;
 	}
 
-
 	// Fork
 	pid_t p = fork();
 
@@ -37,32 +36,24 @@ int main() {
 		// Zero, parent process
 		printf("Hello from the Child\n");
 
-		// Read from the parent pipe
-		char stringFromParent[100];
-		char reply[] = "Reply from child";
+		// reroute the stdout of the child
+		dup2(toParent[WRITEEND], STDOUT_FILENO);
+		close(toParent[WRITEEND]);
 
-		read(toChild[READEND], stringFromParent, 100);
+		// Call something to generate output
+		char *args[] = {"ls", "-al", NULL};
+		execvp(args[0], args);
 
-		// Print it
-		printf("Got from parent: %s\n", stringFromParent);
 
-
-		write(toParent[WRITEEND], reply, strlen(reply) + 1);
-
-		
+		return 0;
 
 	} else {
 		// Not zero, parent process
 		printf("Hello from the Parent\n");
-
-		char sent[] = "Message to the child";
-		char stringFromChild[100];
-
-		// Send it to the child
-		write(toChild[WRITEEND], sent, strlen(sent) + 1);
+		char stringFromChild[1000];
 
 		// Read from the child
-		read(toParent[READEND], stringFromChild, 100);
+		read(toParent[READEND], stringFromChild, 1000);
 
 		// Print the reply
 		printf("Got from child: %s\n", stringFromChild);
