@@ -10,6 +10,8 @@
 
 // For IPC, the child's stdin and out needs to be piped to the parent
 // then exec is called, cant pass the pipe to the other process
+// Nothing will be shared except for shared memory segments, these can be
+// used for IPC between child and parent or child to cild
 
 int main() {
 	
