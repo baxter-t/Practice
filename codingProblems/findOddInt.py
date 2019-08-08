@@ -12,5 +12,9 @@ def find_it(arr):
         if occurences[key] % 2 != 0:
             return key
     
+def find_linear(arr):
+
+    return [x for x in arr if arr.count(x) % 2 != 0][0]
 
 print(find_it(inp))
+print(find_linear(inp))
