@@ -8,7 +8,6 @@
 struct Node {
 	int value;
 	struct Node *next;
-	
 };
 
 struct LinkedList {
@@ -16,42 +15,39 @@ struct LinkedList {
 	struct Node *tail;
 };
 
-void 
-add_LL(struct LinkedList list, int value)
+void
+add_LL(struct LinkedList *list, int value)
 {
-    struct Node new = {
-	.value = value,
-	.next = NULL,
-    };
+	struct Node new = {
+		.value = value,
+		.next = 0,
+	};
 
-    if (list.root == NULL) {
-	list.root = &new;
-	list.tail = &new;
+	if (!list->root) {
+		list->root = &new;
+		list->tail = &new;
+	} else {
+		list->tail->next = &new;
+		list->tail = &new;
+	}
 
-	return;
-    }
-
-    list.tail->next = &new;
-    list.tail = &new;
+	printf("hello, current value: %d\n", value);
 }
 
-
-int main(int argc, char **argv) {
+int
+main(int argc, char **argv)
+{
 	struct LinkedList list;
-    add_LL(list, 1);
-    add_LL(list, 2);
-    add_LL(list, 3);
-    add_LL(list, 4);
-    add_LL(list, 5);
+	add_LL(&list, 1);
+	add_LL(&list, 2);
+	add_LL(&list, 3);
+	add_LL(&list, 4);
+	add_LL(&list, 5);
 
-    struct Node *current = list.root;
+	struct Node *current = list.root;
 
-    while (current != NULL) {
-	printf("Value: %d\n", current->value);
-	current = current->next;
-    }
-
-
-	
-	
+	while (current) {
+		printf("Value: %d\n", current->value);
+		current = current->next;
+	}
 }
