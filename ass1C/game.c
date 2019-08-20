@@ -34,7 +34,7 @@ void setBoard(GameState *game) {
     game->board = malloc(game->boardHeight * sizeof(char *));
 
     for (int x = 0; x < game->boardHeight; x++) {
-        game->board[x] = malloc(game->boardWidth * sizeof(char *));
+        game->board[x] = malloc(game->boardWidth * sizeof(char));
     }
 
     for (int x = 0; x < game->boardHeight; x++) {
