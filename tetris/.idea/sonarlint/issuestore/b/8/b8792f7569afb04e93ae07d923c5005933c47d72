@@ -1,0 +1,12 @@
+
+Lsquid:S1068")Remove this unused "board" private field.(åÌ–®şÿÿÿÿ8çí±ßÊ-
+[
+squid:S106)"9Replace this use of System.out or System.err by a logger.(å‡ëÇøÿÿÿÿ8‡²ÍßÊ-
+Hsquid:S1068"*Remove this unused "height" private field.(ÅœÔ˜8›ì¯ßÊ-
+Msquid:S1172"/Remove this unused method parameter "tileFile".(õ„—»8…ä³ßÊ-
+[
+squid:S106'"9Replace this use of System.out or System.err by a logger.(‹µ‹¶ıÿÿÿÿ8‡²ÍßÊ-
+[squid:S1197!"8Move the array designator from the variable to the type.(¡şÏÖøÿÿÿÿ8œˆÅßÊ-
+Lsquid:S1068")Remove this unused "width" private field.(•õ¦òùÿÿÿÿ8›ì¯ßÊ-
+[
+squid:S106,"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ØÎßÊ-
