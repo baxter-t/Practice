@@ -36,6 +36,24 @@ public class Board {
         }
     }
 
+    public boolean checkPossible(Tile tile) {
+        int[] move = new int[3];
+
+        for (int rot = 0; rot < 360; rot += 90) {
+            for (int row = -2; row < height + 1; row++) {
+                for (int col = -2; col < width + 1; col++) {
+                    move[0] = row;
+                    move[1] = col;
+                    move[2] = rot;
+
+                    if (checkMove(move, tile))
+                        return true;
+                }
+            }
+        }
+        return false;
+    }
+
     public int clearCompletes() {
         boolean complete;
         int completeCount = 0;
@@ -50,6 +68,7 @@ public class Board {
 
             if (complete) {
                 // Clear that row
+                System.out.printf("Clearing row: %d%n", i);
                 completeCount++;
                 for (int j = 0; j < width; j++) {
                     board[i][j] = false;
@@ -66,6 +85,7 @@ public class Board {
             }
 
             if (complete) {
+                System.out.printf("Clearing column: %d%n", i);
                 // Clear that row
                 completeCount++;
                 for (int j = 0; j < height; j++) {
@@ -82,20 +102,13 @@ public class Board {
         int x = move[0];
         int y = move[1];
         int rotation = move[2];
+        boolean[][] tile = new boolean[TILESIZE][TILESIZE];
 
-        boolean[][] tile = toPlace.getTile();
+        try {
+            tile = toPlace.getTile(rotation);
+        } catch (Exception e) {
 
-        if (rotation % 90 != 0) {
-            // Bad rotation
-            return false;
         }
-
-        // Rotate the tile
-        while (rotation != 0) {
-            // Rotate the tile
-            rotation -= 90;
-        }
-
 
         for (int row = 0; row < TILESIZE; row++) {
             for (int col = 0; col < TILESIZE; col++) {
@@ -104,6 +117,9 @@ public class Board {
                 int adY = col - 2 + y;
 
                 if (tile[row][col]) {
+                    if (adX < 0 || adY < 0 || adX > height - 1 || adY > width - 1) {
+                        return false;
+                    }
                     if (this.board[adX][adY]) {
                         return false;
                     }
@@ -122,12 +138,12 @@ public class Board {
         int x = move[0];
         int y = move[1];
         int rotation = move[2];
+        boolean[][] tile = new boolean[TILESIZE][TILESIZE];
 
-        boolean[][] tile = toPlace.getTile();
+        try {
+            tile = toPlace.getTile(rotation);
+        } catch (Exception e) {
 
-        // Rotate the tile
-        while (rotation != 0) {
-            rotation -= 90;
         }
 
         for (int row = 0; row < TILESIZE; row++) {

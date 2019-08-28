@@ -6,7 +6,6 @@ public class Game {
     private int width;
     private int height;
     private Board board;
-    private static final int TILESIZE = 5;
     private ArrayList<Tile> tiles;
     private int currentTile;
     private int score;
@@ -27,7 +26,7 @@ public class Game {
         addTile("1111100000000000000000000");
         addTile("1000010000100001000010000");
         addTile("1100011100000000000000000");
-        addTile("0000010000011100000010000");
+        addTile("0000000100011100010000000");
     }
 
     private int[] getMove() {
@@ -48,9 +47,8 @@ public class Game {
     }
 
     private void gameLoop() {
-        int turns = 0;
-
-        while (turns < 3) {
+        while (board.checkPossible(tiles.get(currentTile))) {
+            score += board.clearCompletes();
             // Print the board
             this.board.printBoard();
             System.out.println();
@@ -68,18 +66,21 @@ public class Game {
                     board.placeTile(move, tiles.get(currentTile));
                     currentTile++;
                     currentTile = currentTile % tiles.size();
-                    turns++;
                     valid = true;
                 } else {
                     System.out.println("Invalid Move, Try again.");
                 }
+                board.printBoard();
+                tiles.get(currentTile).printTile();
             }
         }
 
+        board.printBoard();
+        System.out.printf("Game Over!%nYour score was: %d%n", score);
     }
 
     public static void main(String args[]) {
-        Game game = new Game(10, 10, "tiles");
+        Game game = new Game(5, 5, "tiles");
         game.loadTiles();
         game.gameLoop();
 
