@@ -17,6 +17,9 @@ public class Board {
         }
     }
 
+    /**
+     *
+     */
     public void printBoard() {
         System.out.print("     ");
         for (int i = 0; i < width; i++) {
@@ -36,6 +39,10 @@ public class Board {
         }
     }
 
+    /**
+     * @param tile
+     * @return
+     */
     public boolean checkPossible(Tile tile) {
         int[] move = new int[3];
 

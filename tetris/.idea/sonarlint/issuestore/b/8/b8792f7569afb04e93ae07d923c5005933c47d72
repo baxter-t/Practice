@@ -1,12 +1,21 @@
 
-Lsquid:S1068")Remove this unused "board" private field.(åÌ–®şÿÿÿÿ8çí±ßÊ-
+V
+squid:S106G"9Replace this use of System.out or System.err by a logger.(¤ğ¼Ø8ıœÍŠÍ-
+V
+squid:S106+"9Replace this use of System.out or System.err by a logger.(Å¦ì8™ò¶ŠÍ-
 [
-squid:S106)"9Replace this use of System.out or System.err by a logger.(å‡ëÇøÿÿÿÿ8‡²ÍßÊ-
-Hsquid:S1068"*Remove this unused "height" private field.(ÅœÔ˜8›ì¯ßÊ-
-Msquid:S1172"/Remove this unused method parameter "tileFile".(õ„—»8…ä³ßÊ-
+squid:S1066"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8Ñ»ÒŠÍ-
+Msquid:S1172"/Remove this unused method parameter "tileFile".(õ„—»8…ä³ßÊ-
+Lsquid:S1068")Remove this unused "width" private field.(•õ¦òùÿÿÿÿ8Ñ‘ß­Í-
+V
+squid:S106#"9Replace this use of System.out or System.err by a logger.(ø—Ì©8•¡«ŠÍ-
 [
-squid:S106'"9Replace this use of System.out or System.err by a logger.(‹µ‹¶ıÿÿÿÿ8‡²ÍßÊ-
-[squid:S1197!"8Move the array designator from the variable to the type.(¡şÏÖøÿÿÿÿ8œˆÅßÊ-
-Lsquid:S1068")Remove this unused "width" private field.(•õ¦òùÿÿÿÿ8›ì¯ßÊ-
-[
-squid:S106,"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8ØÎßÊ-
+squid:S1069"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8Ñ»ÒŠÍ-
+V
+squid:S106%"9Replace this use of System.out or System.err by a logger.(àÇ«ß8•¡«ŠÍ-
+[squid:S1197R"8Move the array designator from the variable to the type.(¡şÏÖøÿÿÿÿ8´ˆÊŠÍ-
+V
+squid:S106O"9Replace this use of System.out or System.err by a logger.(ˆã8¶Ûê¬Í-
+V
+squid:S106("9Replace this use of System.out or System.err by a logger.(¯ÅŠ“8™ò¶ŠÍ-
+Hsquid:S1068"*Remove this unused "height" private field.(ÅœÔ˜8Ñ‘ß­Í-

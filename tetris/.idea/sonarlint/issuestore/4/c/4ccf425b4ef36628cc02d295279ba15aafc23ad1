@@ -1,11 +1,24 @@
 
-[squid:S1197!"8Move the array designator from the variable to the type.(ï±í¿úÿÿÿÿ8æ¶ŸßÊ-
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(å‡ëÇøÿÿÿÿ8Ê¯„ßÊ-
-[
-squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8¾ôÑŞÊ-
-2squid:S1700"Rename field "board"(Šƒ«ù8İôâŞÊ-
-Vsquid:S1197@"8Move the array designator from the variable to the type.(×Ò§ş8•…æŞÊ-
-Rsquid:S10666"/Merge this if statement with the enclosing one.(ƒ¤”úÿÿÿÿ8æ¶ŸßÊ-
 V
-squid:S106"9Replace this use of System.out or System.err by a logger.(»€’À8™…ƒßÊ-
+squid:S106!"9Replace this use of System.out or System.err by a logger.(»€’À8™…ƒßÊ-
+[
+squid:S106_"9Replace this use of System.out or System.err by a logger.(ÍùğÙûÿÿÿÿ8‡™Õ¬Í-
+V
+squid:S106"9Replace this use of System.out or System.err by a logger.(×•œ²8•¨ñŠÍ-
+psquid:S3776@"RRefactor this method to reduce its Cognitive Complexity from 22 to the 15 allowed.(¼¿Úà8Ç¥“‹Í-
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÏÚøÓûÿÿÿÿ8¿åıŠÍ-
+Isquid:S00108˜")Either remove or fill this block of code.(”ı¾8«“Í­Í-
+[
+squid:S106#"9Replace this use of System.out or System.err by a logger.(å‡ëÇøÿÿÿÿ8Ê¯„ßÊ-
+[
+squid:S106&"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8¾ôÑŞÊ-
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ÏÚøÓûÿÿÿÿ8ùäÿŠÍ-
+2squid:S1700"Rename field "board"(Šƒ«ù8İôâŞÊ-
+[
+squid:S106"9Replace this use of System.out or System.err by a logger.(ªÓ¼áşÿÿÿÿ8¿•üŠÍ-
+U
+squid:S106N"9Replace this use of System.out or System.err by a logger.(ú·ù/8ÏÉÖ¬Í-
+Hsquid:S00108t")Either remove or fill this block of code.(”ı¾8—¼Õ­Í-
+psquid:S3776k"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(Ğ˜Â“8—¼Õ­Í-
