@@ -4,8 +4,14 @@
 '''
 
 def listSum(k, arr):
+        
+        setArr = {}
+
+        for x in arr:
+            setArr[x] = setArr.get(x, 0)
+
 	for x in arr:
-		if k - x in arr:
+		if k - x in setArr:
 			return True
 
 	return False

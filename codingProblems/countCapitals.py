@@ -4,10 +4,8 @@
 '''
 
 def count_capitals(fname) :
-	count = 0
-
 	with open(fname, 'r') as f:
-		return sum(1 if c.isupper() else 0 for line in f for c in line)
+                return len[x if x.isupper() else "" for line in f for x in line]
 
         
 

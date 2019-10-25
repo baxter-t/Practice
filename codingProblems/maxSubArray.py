@@ -10,4 +10,5 @@ def maxSub(arr, k):
 		if len(sub) == k:
 			print(max(sub))
 
+
 maxSub([10, 5, 2, 7, 8, 7], 3)

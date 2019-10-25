@@ -8,15 +8,13 @@
 	is, False if not. Ignore numbers and punctuation.
 '''
 
-import string
+def isPangram(s):
+    s = s.lower()
 
-def is_pangram(s) :
-	s = s.lower()
-	letters = []
-	for x in s :
-		if x not in letters and x.isalpha() :
-			letters.append(x)
-	return len(letters) == 26
+    s = "".join([x for x in s if x.isalpha()])
+    print(s)
+
+    return len(set(s)) == 26
 
 pangram = "The quick, brown fox jumps over the lazy dog!"
-print(is_pangram(pangram))
+print(isPangram(pangram))
